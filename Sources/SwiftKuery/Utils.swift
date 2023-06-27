@@ -68,7 +68,7 @@ struct Utils {
         var range = inputQuery.range(of: Parameter.numberedParameterMarker)
         var index = 1
         while let _range = range {
-            resultQuery += inputQuery[..<_range.lowerBound] + marker + "\(index)"
+            resultQuery += String(inputQuery[..<_range.lowerBound] + marker) + "\(index)"
             inputQuery = String(inputQuery[_range.upperBound...])
 
             index += 1
